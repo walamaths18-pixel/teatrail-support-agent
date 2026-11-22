@@ -454,7 +454,7 @@ document.querySelectorAll(".chip").forEach((c) => c.addEventListener("click", ()
 /* ---------------- passcode gate --------------------------------------------- */
 $("gateForm").addEventListener("submit", (e) => {
   e.preventDefault();
-  if ($("passcodeInput").value === PASSCODE) {
+  if ($("passcodeInput").value.trim().toLowerCase() === PASSCODE) {
     sessionStorage.setItem("teatrail_unlocked", "1");
     unlock();
   } else {
